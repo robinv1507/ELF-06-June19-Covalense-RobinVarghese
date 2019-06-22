@@ -1,12 +1,30 @@
-package com.covalense.javaapp.assignment3;
+package com.as3;
 
-public class SringReverse {
+import java.util.Scanner;
 
-	public static void main(String[] args) {
+public class SringReverse {// class start
+	private static void stringReverse(String s) {
 
-		String s="nilesh";
-		
-		String s2=s. 
+		String rev = " ";
+		int i, length;
+		length = s.length();
+		for (i = length - 1; i >= 0; i--) {
+			rev = rev + s.charAt(i);
+		}
+
+		System.out.print("Reverse of Entered String is : " + rev);
+
 	}
 
-}
+	public static void main(String[] args) {// main start
+
+		Scanner c = new Scanner(System.in);
+		System.out.println("enter the string");
+		String s = c.nextLine();
+		stringReverse(s);
+
+		c.close();
+
+	}// main end
+
+}// class end
