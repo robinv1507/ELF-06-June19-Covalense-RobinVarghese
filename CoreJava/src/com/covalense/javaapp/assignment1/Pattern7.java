@@ -1,27 +1,38 @@
-package com.covalense.javaapp.assignment1;
 
 public class Pattern7 {
-
 	public static void main(String[] args) {
 
-		int i, j,b;
-		int n = 5;
+		int rows = 5;
+		System.out.println("## Printing the pattern ##");
 
-		for (i = 0; i < n; i++) {
-
-			for (j = (n - i - 1); j > 0; j--) {
-
+		for (int i = 1; i <= rows; i++) {
+			// Print space in decreasing order
+			for (int j = rows; j > i; j--) {
 				System.out.print(" ");
 			}
-			for (j = 0; j <= i; j++) {
-				System.out.print("*");
-			}for (j = i-1; j < i; j++) {
-				for(b=j;b>)
-				System.out.print("*");
+			// Print star in increasing order
+			for (int k = 1; k <= i; k++) {
+				if (k == 1 || k == i)
+					System.out.print("*");
+				else
+					System.out.print(" ");
 			}
-			
-			System.out.print("\n");
+			System.out.println();
 		}
-	}
+		for (int i = 1; i <= rows - 1; i++) {
+			// Print space in increasing order
+			for (int j = 1; j <= i; j++) {
+				System.out.print(" ");
+			}
+			// Print star in decreasing order
+			for (int k = rows - 1; k >= i; k--) {
+				if (k == rows - 1 || k == i)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			System.out.println();
+		}
 
+	}
 }
