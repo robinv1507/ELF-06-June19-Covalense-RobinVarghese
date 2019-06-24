@@ -19,7 +19,6 @@ public class FileHandling {
 	    csv.flush();
 	    System.out.println("file is written");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
       

@@ -1,3 +1,4 @@
+package com.covalense.javaapp.assignmentfour;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,10 +32,8 @@ public class ReadCsv {
 	                System.out.println("---------------\n\n");
 			 }
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
