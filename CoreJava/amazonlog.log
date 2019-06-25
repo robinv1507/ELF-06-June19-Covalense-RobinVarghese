@@ -1,0 +1,48 @@
+Jun 22, 2019 1:02:01 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:02:01 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:02:01 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:02:17 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:02:17 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:02:17 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:02:18 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:02:18 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:02:18 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:02:24 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:02:25 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:02:25 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:03:00 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:03:00 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:03:00 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:03:01 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:03:01 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:03:01 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:03:45 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:03:45 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:03:45 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
+Jun 22, 2019 1:05:08 PM com.covalense.javaapp.logger.Amazonloger main
+SEVERE: hi loger started
+Jun 22, 2019 1:05:08 PM com.covalense.javaapp.logger.Register connectDb
+SEVERE:  connecting to the DB 
+Jun 22, 2019 1:05:08 PM com.covalense.javaapp.logger.Login validateUser
+SEVERE: Validating the user 
