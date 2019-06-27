@@ -1,0 +1,6 @@
+Jun 17, 2019 12:43:13 PM Amazonloger main
+SEVERE: hi loger started
+Jun 17, 2019 12:43:13 PM Register connectDb
+SEVERE:  connecting to the DB 
+Jun 17, 2019 12:43:13 PM Login validateUser
+SEVERE: Validating the ser 
