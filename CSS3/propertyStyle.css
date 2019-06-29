@@ -1,0 +1,27 @@
+body{
+    background-color: aliceblue;
+    padding: 0%;
+    background-image: radial-gradient(rgb(224, 224, 231) ,green,red );
+}
+
+#inner1{
+
+    background: black;
+   color: aliceblue;
+    float: left;
+    width: 40%;
+    height: 70%;
+    margin: 30px;
+    outline-color:aquamarine; 
+
+}
+
+#inner2{
+
+    background: rgb(199, 18, 18);
+    float: right;
+    width: 20%;
+    margin: 30px;
+    padding: 100px;
+}
+
