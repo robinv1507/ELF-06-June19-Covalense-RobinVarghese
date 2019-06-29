@@ -1,0 +1,108 @@
+body{
+    background-color: aliceblue;
+    padding: 0;
+    margin: 0%;
+   background-image: linear-gradient(to center,aliceblue,blue);
+}
+#header{
+    height: 40px;
+    width: px;
+    font-size: 13px;
+    display: block;
+    color:#fff;
+    background-color: rgb(18, 126, 214);
+    padding : 2px 3px;
+    border: 10 px solid;
+
+}
+h4{
+    color:#000;
+    font-size: 20px;
+    -webkit-text-stroke: 1px;
+    
+    
+
+}
+.heading{
+    color: rgb(235, 166, 17);
+    background: 30;
+}
+#p1{
+    color:blue; 
+    font-family: 'Rubik Mono One', sans-serif;
+    
+    text-indent: 22px;
+    text-shadow: 2px;
+}
+input[type="text"],input[type="password"]{
+
+    height: 30px;
+    width: 150px;
+    font-size: 10px;
+    display: block;
+    padding: 10px;
+   
+    border-radius: 9px
+}
+
+button[type="submit"]{
+    height: 40px;
+    width: 150px;
+    font-size: 13px;
+    display: block;
+    color: rgb(209, 30, 75);
+    background-color: rgb(74, 179, 126);
+    padding : 2px 3px;
+    border: 10 px solid;
+}
+button:hover{
+    height: 40px;
+    width: 150px;
+    font-size: 13px;
+    display: block;
+    color: rgb(172, 29, 65);
+    background-color: rgb(205, 218, 211);
+    padding : 2px 3px;
+    border: 10 px solid;
+    border-radius: 1px;
+
+}
+#login{
+
+    background: white;
+    border-radius: 20px;
+    left: 20%;
+    right: 70%;
+    padding: 120px;
+    margin: 60px 400px;
+    border: 2px double;
+    box-shadow: 5px 5px 5px black;
+}
+img{
+
+    padding: 2px 29px;
+
+}
+nav{
+
+    width:100%;
+    color: #fff;
+    background-color: rgb(14, 94, 199);
+}
+ul{
+    margin: 0;
+}
+li{
+    display: inline;
+}
+ul li a{
+
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    padding: 30px;
+    display: inline-block;
+}
+#lognav{
+    margin:left;
+}
