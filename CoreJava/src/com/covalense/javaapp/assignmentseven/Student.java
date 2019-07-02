@@ -14,6 +14,7 @@ public class Student {
 		this.age = age;
 		this.marks = marks;
 		this.gender = gender;
+		this.id=id;
 	}
 
 }// end of class
