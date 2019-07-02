@@ -20,19 +20,19 @@ public class PersonalDetails {
 		try (FileOutputStream fout = new FileOutputStream("personal.properties");
 				FileInputStream fin=new FileInputStream("personal.properties");  ) {
 
-			Properties p = new Properties();
+			Properties propertiesWrite = new Properties();
  
-			p.setProperty("Name", "robin");
-			p.setProperty("Address", "Jakkasandra");
+			propertiesWrite.setProperty("Name", "robin");
+			propertiesWrite.setProperty("Address", "Jakkasandra");
 
 			// writing the data to the file
-			p.store(fout, "personal details");
+			propertiesWrite.store(fout, "personal details");
 			
 			//reading the data
-			Properties pr = new Properties();
-			pr.load(fin);
+			Properties propertiesRead = new Properties();
+			propertiesRead.load(fin);
 			
-			String name=pr.getProperty("Name");
+			String name=propertiesRead.getProperty("Name");
 			log.info("name is "+name);
 
 		} catch (FileNotFoundException e) {
