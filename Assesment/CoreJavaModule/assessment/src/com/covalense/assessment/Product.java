@@ -1,4 +1,4 @@
-package com.covalense.assessment;
+package com.covalense.javaapp.assessment;
 
 public class Product {
 

@@ -1,4 +1,4 @@
-package com.covalense.assessment;
+package com.covalense.javaapp.assessment;
 /*
  * WAP to search a train by name or number
  */

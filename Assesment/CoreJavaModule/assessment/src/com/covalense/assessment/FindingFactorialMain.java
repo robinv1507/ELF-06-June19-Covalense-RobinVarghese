@@ -1,5 +1,4 @@
-package com.covalense.assessment;
-
+package com.covalense.javaapp.assessment;
 import java.util.function.Function;
 
 import lombok.extern.java.Log;
@@ -11,7 +10,7 @@ import lombok.extern.java.Log;
 public class FindingFactorialMain {
 
 	public static void main(String[] args) {
-		int number = 5;
+		int number = 6;
 		//finding factorial of number 5
 		Function<Integer, Integer> as = f -> {
 			int fact = 1;
@@ -25,7 +24,7 @@ public class FindingFactorialMain {
          
 		int a = as.apply(number);
 		//displaying the factorial
-		log.info("factorial of the number " + number + "is" + a);
+		log.info("factorial of the number " + number + " is " + a);
 
 	}// end of main
 
