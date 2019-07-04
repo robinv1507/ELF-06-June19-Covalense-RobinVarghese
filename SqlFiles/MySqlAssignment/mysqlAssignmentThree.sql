@@ -55,11 +55,10 @@ select max(salary) as second_largest_salary from employee where salary<(select  
    9.WAQ to display the 3rd maximum salary .
 */
 
-
-
-
+select max(salary) as 3rd_maximum_salary from employee where salary<(select  max(salary) from employee where salary<(select  max(salary) from employee ) )
 
 
 /*
     10.WAQ to display the 4th least salary.
 */
+select max(salary) as 4th_maximum_salary from employee where salary<(select  max(salary) from employee where salary<(select  max(salary) from employee where salary<(select  max(salary) from employee ) ))
