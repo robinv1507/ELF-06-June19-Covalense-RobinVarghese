@@ -36,6 +36,7 @@ public class ArrayOperationsMain {
 
 		Arrays.copyOf(a, c[0]);
 		log.info("copied array element ");
+		
 		// displaying the copied array
 		for (int p : a) {
 			log.info(" " + p);

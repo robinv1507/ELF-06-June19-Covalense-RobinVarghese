@@ -16,27 +16,43 @@ import lombok.extern.java.Log;
 public class ProductMain {
 	public static void main(String[] args) {
 		
-		Product p1=new Product(01,"tv","lg",123355);
-		Product p2=new Product(02,"phone","redmi note2",13355);
 		
-		ArrayList<Product> a=new ArrayList<>();
-		a.add(p1);
-		a.add(p2);
+		ArrayList<Product> productArrayList=new ArrayList<>();
 		
+		productArrayList.add(new Product(01,"tv","lg",123355));
+		productArrayList.add(new Product(02,"phone","redmi note2",13355));
+		productArrayList.add(new Product(03,"phone","redmi note7",15000));
+		
+		
+		//user inputs
 		String productType="tv";
+		int startRang=12000;
+		int endRange=14000;
 		
-	  List<Product> newList=a.stream().filter(i->i.ptype.equals(productType)).collect(Collectors.toList());
+		//filtering based on type of product
+	  List<Product> productTpyeList=productArrayList.stream().filter(i->i.ptype.equals(productType)).collect(Collectors.toList());
 	  
-	  
+	  //filtering based on given range of product
+	  List<Product> rangeList=productArrayList.stream().filter(i->i.cost>startRang && i.cost<endRange).collect(Collectors.toList());
+
        //displaying product based on p type
-        for(Product p : newList)
+	  log.info("product based on p type");
+        for(Product p : productTpyeList)
         {
         	log.info(" product name ="+p.name);
         	log.info(" product type ="+p.ptype);
         	log.info(" product cost ="+p.cost);
         	
         }
-			
+        //displaying product based on given range of product
+        log.info("product based on given range of product");
+        for(Product pt : rangeList)
+        {
+        	log.info(" product name ="+pt.name);
+        	log.info(" product type ="+pt.ptype);
+        	log.info(" product cost ="+pt.cost);
+        	
+        }
 				
 		
 		
