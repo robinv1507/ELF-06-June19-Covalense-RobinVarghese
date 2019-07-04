@@ -17,9 +17,9 @@ public class BmiTestMain {
 		Predicate<Double> p = b -> b < 100;
 
 		if (p.test(bmi)) {
-			log.info("noraml bmi fine");
+			log.info(" under wieght bmi");
 		} else {
-			log.info("under wieght bmi fine");
+			log.info(" noraml bmi fine");
 		}
 
 	}// end of main
