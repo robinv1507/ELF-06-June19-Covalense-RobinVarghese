@@ -1,0 +1,158 @@
+
+
+1.Write a query to display Employee name, his salary along with the designation for all the employee.
+
+Query: select name,salary,designation from employee_info
+
+2.Write a query to obtain name and his current salary and new salary with a hike 25 % for all the Employee.
+
+Query: select name,salary as current_salary,(salary+salary*25/100) as New_salaryn from employee_info
+
+3.Write a query to display all the details of the Employee who are working as salesman.
+
+Query: select * from employee_info where designation='salesman';
+
+4.Write a query to display all the employees of Dept.no 20.
+
+
+Query: select * from employee_info where dept_id=20;
+
+5.Write a query to display all the Employees DOB before 1994.
+
+Query: select * from employee_info where year(dob)<1994;
+
+6.Write a query to display all the employees whose annual salary is less than 30,000.
+
+
+Query: select * from employee_info where anual_salary<30000;
+
+7.Write a query to display name, salary and Annual salary of all the clerks.
+
+Query: select name,salary, anual_salary from employee_info where designation='clerks';
+
+8.Write a query to display all the details of Employee Whoever Hired after Feb of 2013.
+
+Query:   select * from employee_info where date(joining_date)>2013-02-01;
+
+9.Write a query to display managers working in deptno 20 only if salary is greater than 2500.
+
+Query:    select * from employee_info where dept_id='20' and salary>2500;
+
+10.Write a query to display all the employee excluding Analyst.
+
+Query:    select * from employee_info where not designation='analyst';
+
+11.Write a query to display all the employees excluding salesman who are working in department 30.
+
+Query: select * from employee_info where not designation='salesman' and  not dept_id=30;
+
+12.Write a query to display names of all the employee who are working in dept 30 as manager OR all the names of employee who are working as a clerk and salary less than 2000.
+
+Query: select name from employee_info where (designation='manager' and   dept_id=30) or (designation='clerks' and salary<2000) ;
+
+13.Write a query to display all the Employees in dept 20 only if their salary is greater than 1000 and less than 3500, including 1000 & 3500.
+
+select * from employee_info where  dept_id=20 and salary between 1000 and 3500
+
+14.Write a query to display all the details of Employees who are working as clerk in deptno 20,30 or 40.
+
+Query: select * from employee_info where designation='clerk' and   dept_id in(20,30,40);
+
+15.Write a query to display the details of software developer, manager or clerk who are working in dept.  10 or 20 and salary is greater than 1500.
+
+
+Query: select * from employee_info where designation in('clerk','software developer','manager') and   dept_id in(10,20) and salary>1500;
+
+16. Write a query to display all the details of Employees who are working in department 10,20 excluding all the Salesman and Analyst.
+
+Query: select * from employee_info where designation not in('Salesman','Analyst') and   dept_id in(10,20);
+
+17. Write a query to display name, Salary for all the Employees who are working in dept 10 or 20 and their annual salary between 20,000 and 40,000 including the limits.
+
+Query: select name,salary from employee_info where    dept_id in(10,20) and salary between  20,000 and 40,000 ;
+
+18.Write a query to display all the details of employees who were hire in the month of September working in dept 20 or 30.
+
+Query: select * from employee_info where  month(joining_date)='September' and dept_id in(20,30);
+
+19.Write a query to display their name and DOJ of employee who works as salesman or clerk and their names has at least one S or E.
+
+Query: select  name,joining_date from employee_info where designation in('salesman','clerk') and name like '%s%' or name like '%e%'  ;
+
+20.Write a query to display Average salary and Highest salary of dept. 20.
+
+Query: select  avg(salary) as Average_salary ,max(salary) as Highest_salary from employee_info where dept_id=20;
+
+21.Write a query to display date of first and last Hired Employees.
+
+ select max(joining_date) as last_Hired_Employee ,min(joining_date) as  as first_Hired_Employee from employee_info  
+
+22.Write a query to display AVG Salary of Employees by excluding president and manager(job).
+
+ select avg(salary) from employee_info where designation  not in('president','manager');
+
+23.Write a query to display the total salary and average salary of each department
+
+select avg(salary),sum(salary) from employee_info group by department;
+
+24.Write a query to find the highest and least salary of an Employee in each job by excluding the employees whose name has ‘R’ as the last but one character.
+
+select min(salary),max(salary) from employee_info group by department not like '%R';
+
+26. Write a query to list the employee whose designation are same as Vikas    or Rahul.
+
+
+Query: select * from employee_info where  designation in( 'Vikas','Rahul');
+
+27. Write a query to List the employee whose salary is equal to the average of max and minimum.
+
+Query: select * from employee_info where  salary=avg((select min(salary)  from employee_info ) and (select max(salary)  from employee_info ))
+
+28. Write a query to display employee name, department name and the location of all employee.
+
+Query: select e.name,ef.location,d.departmen_name from employee_info e, department d ,employee_other ef
+
+29. Write a query to display all the details of employee whose name begins with the consonants.
+
+Query: select * from employee_info where name not in('a','e','i','o')
+
+30. Create a Views from Employee_Info table .Views should have all  the record whose salary is greater than 10000.
+
+Query: 
+
+CREATE
+   
+    VIEW `covalense_db`.`emp_info` 
+    AS
+    (SELECT * FROM employee_info where salary>10000)
+
+
+
+31.  Create a trigger which will work before deletion in employee_info table     and create a duplicate copy of the record in another table employee_backup
+Query: 
+
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    TRIGGER `covalense_db`.`t1` BEFORE DELETE
+    ON `covalense_db`.`employee_info`
+    FOR EACH ROW BEGIN
+     insert into emp_backup set name=old.name,email=old.email,
+       dept_id=old.dept_id,salary=old.salary,age=old.age
+
+    END$$
+
+DELIMITER ;
+
+32.What is Driver Class?
+
+ans: it is class present in com.mysql.jdbc.driver package ,which will helps to load the driver db to java app
+
+33.What is DB URL?
+ans: It is  used to specifing the particular rdbms application to java app
+it consists of  protocol : subprotocol :subname 
+
+in sub name : host name,port no,db name,passwor,username
+
+eg: dburl=jdbc:mysql:/localhost/3306/db1
