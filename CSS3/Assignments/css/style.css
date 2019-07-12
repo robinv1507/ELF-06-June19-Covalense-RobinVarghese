@@ -1,0 +1,52 @@
+.card.card-body {
+    box-shadow: inset -1px 9px 12px 1px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 118px 427px 109px;
+      text-align: center;
+      font-family: arial;
+      padding: 31px;
+      background: #e6cd9c;
+  }
+  
+  img{
+    margin: 29px;
+      border-radius: 60%;
+      width: 61%;
+  
+  }
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+     .fa.fa-facebook
+     {
+      font-size:20px;color:blue;
+     }
+     .fa.fa-instagram
+     {
+      font-size:20px;color: #d8314a;;
+     }
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    padding: 14px;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
