@@ -1,0 +1,22 @@
+.demo{
+    color: black;
+}
+#name{
+    color: blue
+}
+#age{
+    color: blue
+}
+.button{
+    color: coral;
+    margin: 30px;
+
+}
+.button1{
+    color:crimson;
+}
+.blue{
+
+    color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
