@@ -29,3 +29,68 @@ var demoQuery=document.querySelectorAll('.demo');
 console.log(demoQuery.lenght);
 
 document.getElementById('blue').className='blue';
+
+//this keyword demo
+var ab=10;
+/* 
+var ab=10;
+console.log(this);
+console.log(window);
+console.log(this.ab);
+console.log(window.ab);
+console.log(this===window);
+ */
+
+
+/*  var person={
+        name :"robin",
+        age:29,
+        getname :function(){
+            console.log(this);
+            function innerFunction(){
+                console.log(this);
+            }
+            innerFunction();
+        }
+        
+    };
+    person.getname(); */
+/* function checkThis(){
+
+console.log(this);
+console.log(window);
+console.log(this.ab);
+console.log(window.ab);
+console.log(this===window);
+}
+
+checkThis(); */
+
+
+//call(), apply() demo
+var john={
+    name :"john",
+    age:29,
+    presentation :function(style,message){
+         if(style==='formal'){
+             console.log("hi "+this.name+ '  good '+message);
+         }else{
+            console.log("hi "+this.name+' '+message);
+         }
+    }
+    
+};
+//john.presentation('formal','morning');
+
+var mike={
+    name :"mike",
+    age:25
+
+};
+//john.presentation.call(mike,'friendly','evening');
+//john.presentation.apply(mike,['friendly','evening']);
+
+var johnForm=john.presentation.bind(mike);
+johnForm('friendly','morning');
+
+
