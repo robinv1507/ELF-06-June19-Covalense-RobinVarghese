@@ -1,0 +1,16 @@
+.card{
+    margin:36px;height:499px;width: 777px;
+}
+.card-header{
+    background: #1e5ed4;
+    color: white;
+    font-size: 28px;
+    font-family: cursive;
+}
+ 
+.fa.fa-eye{
+
+    position: absolute;
+    left: 278px;
+    top: 162px;
+}
