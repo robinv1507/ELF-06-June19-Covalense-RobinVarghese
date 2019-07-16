@@ -7,10 +7,17 @@
     font-size: 28px;
     font-family: cursive;
 }
- 
+.btn.btn-primary{
+    width: 161px;margin: 32px;margin-left: 222px;
+ }
 .fa.fa-eye{
 
     position: absolute;
     left: 278px;
     top: 162px;
+}
+.alert-message{
+    color: #fb1508;
+    padding: 20px;
+    margin: 32px;
 }
