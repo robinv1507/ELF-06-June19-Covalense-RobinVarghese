@@ -17,24 +17,30 @@
                 <div class="form-group-horizontal"><br>
                   <label for="exampleInputEmail1">Email address</label>
                   <input onkeyup="validateForm()" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                   <span class="alert-message"> Enter a valid email address</span>
+                   <span class="alert-message"  id="emailMessage" > Enter a valid email address</span>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
+                  
                   <input name="password" onkeyup="validateForm()" type="password" class="form-control" id="password1" placeholder="Password">
                 <i class="fa fa-eye" onclick="showPassword()" aria-hidden="true"></i>
-                </div><br>
+                <span class="alert-message"  id="passwordMessage" > Enter a password minimum 6  </span>
+                </div>
                 <div class="form-group">
                         <label for="exampleInputPassword1">Conform Password</label>
                         
                         <input name="cPassword" onkeyup="validateForm()" type="password" class="form-control" id="password2" placeholder="Conform Password">
                         <i class="fa fa-eye" style="position: absolute; left: 278px; top: 269px;"onclick="showcPassword()" aria-hidden="true"></i>
-                      </div><br>
+                        <span class="alert-message"  id="cpasswordMessage" > password is not matching </span>
+                      </div>
                
-                <button type="submit" disabled id="submitButton" class="btn btn-primary">Submit</button>
+                <button type="button" disabled id="submitButton" onclick="showTable()" class="btn btn-primary">Submit</button>
               </form>
             </div>
    
+            <table class="tabledata"> 
+
+            </table>
     <script src="form.js"></script>
 </body>
 </html>

@@ -18,6 +18,12 @@
 }
 .alert-message{
     color: #fb1508;
-    padding: 20px;
+    
     margin: 32px;
+    visibility: hidden;
+}
+.tabledata{
+    position: absolute;
+    right: 270px;
+    top: 175px;
 }
