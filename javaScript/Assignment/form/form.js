@@ -85,8 +85,6 @@ document.getElementById('password2').type="text";
 //sign in form data table 
 
 function showTable(){
-    var theadCount=1;
-    console.log(theadCount);
 
 var myemail=localStorage.getItem("email");
 var mypswd=localStorage.getItem("password");
@@ -121,13 +119,10 @@ let signInData = [
   }
   let table = document.querySelector("table");
   let data = Object.keys(signInData[0]);
-  
-  if(theadCount===1){
-      console.log("if")
-      theadCount=2;
+
         generateTableHead(table, data);
        
-  }
+
   generateTable(table, signInData);
 
 }
