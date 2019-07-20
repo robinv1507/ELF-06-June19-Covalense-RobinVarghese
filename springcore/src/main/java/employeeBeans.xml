@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+   <!--  <bean id="employee" class="com.covalense.springcore.beans.EmployeeBean" scope="prototype"
+                  init-method="init" destroy-method="destroy">
+    </bean> -->
+  <!--manual wiring demo  -->
+   <!--  <bean id="employee" class="com.covalense.springcore.beans.EmployeeBean" scope="prototype">
+    <property name="name" value="Rahul"></property>
+      <property name="id" value="01"></property>  
+         <property name="departmentBean" ref="departmentBean"></property>  
+    </bean>
+    <bean id="departmentBean" class="com.covalense.springcore.beans.DepartmentBean" scope="prototype">
+    <property name="deptName" value="it"></property>
+      <property name="deptId" value="01"></property>  
+    </bean> -->
+
+ <!--Auto wire demo  -->
+    <bean id="employee" class="com.covalense.springcore.beans.EmployeeBean"  autowire="byType"  scope="prototype">
+    <property name="name" value="Rahul"></property>
+      <property name="id" value="01"></property>  
+    </bean>
+    
+    <bean id="dev" class="com.covalense.springcore.beans.DepartmentBean">
+    <property name="deptName" value="dev"></property>
+      <property name="deptId" value="01"></property>  
+    </bean>  
+    
+      <bean id="hr" class="com.covalense.springcore.beans.DepartmentBean"  autowire-candidate="false">
+    <property name="deptName" value="hr"></property>
+      <property name="deptId" value="02"></property>  
+    </bean> 
+     
+      <bean id="testing" class="com.covalense.springcore.beans.DepartmentBean" autowire-candidate="false" scope="prototype">
+    <property name="deptName" value="testing"></property>
+      <property name="deptId" value="03"></property>  
+    </bean>   
+ 
+ 
+
+</beans>
