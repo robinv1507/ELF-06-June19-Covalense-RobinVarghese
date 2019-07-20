@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>EMP</title>
+    <meta charset = "utf-8" />
+       <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" type = "text/css" href = "css/style.css" />
+        <link rel = "stylesheet" type = "text/css" href = "css/login.css" />
+
+</head>
+<body>
+    
+    <ul class="header">
+      
+       <li style="float:left;font-size:27px;top: 0px;color:#fff;padding:16px;">E M P</li>
+        <a href="index.html"><img style="float: left;float: left; padding: 4px;height: max-content;" src="img/favicon.ico">
+      <li style="float:left;font-size:25px;top: 0px;color:#fff;padding:16px;">Employee Managment Portal</li></a>
+      
+   </ul>
+       
+   <div class="logdiv">
+       <center><h2 style="color:#fff;height:auto;">Login</h2></center>
+       <form method = "POST"  action="./home" style="background-color:#fff">
+                               
+           <div class="container"><br>
+                <label for="username"><b>Emp Id</b></label>
+                   <input type="text" placeholder="Enter Username" name="empid" required= "required">
+           <br><br>
+              <label for="password"><b>Password</b></label>
+       <input type="password" id="password" onkeyup="validateForm()" placeholder="Enter Password" name="password" required= "required">
+       <i class="fa fa-eye" style="position: absolute;right:25px; top: 234px;" onclick="showPassword()" aria-hidden="true"></i>
+         <br>  <br>
+        <button type="submit" name="login">Login</button>
+               <br> <br>
+               <a href="createEmployeeInfo.html">Create Account</a>
+               <a href="forgetPassword.html" style="float: right;">Forget Password</a>
+     </div>
+                           
+       </form>	
+   </div>
+       <div style = "text-align:right; margin-right:10px;" class = "navbar navbar-default navbar-fixed-bottom">
+           
+       </div>
+       <script src="js/validation.js"></script>	
+</body>
+</html>
