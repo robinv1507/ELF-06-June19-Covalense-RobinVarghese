@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/timer.css"> 
+    
+</head>
+<body>
+    
+        <div class="card">
+                <div class="card-header">
+                Timer Mechine
+                </div>
+                <div class="timer" style="margin: 99px;">
+
+               
+              <form>
+                  Minutes: <input type="text" id="mns" name="mns" value="0" size="3" maxlength="3" /> <br/>
+                  <input type="button" id="btnct" value="START" onclick="countdownTimer()"/>
+                  </form>
+                  Countdown Timer: &nbsp; <span id="showmns">00</span>:<span id="showscs">00</span>
+                
+                   </div>
+                  </div>
+                   <!-- my own JS -->
+          <script src="js/timer.js"></script>        
+</body>
+</html>
