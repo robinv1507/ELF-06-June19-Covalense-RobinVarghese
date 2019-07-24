@@ -29,18 +29,13 @@ public class Dell implements Laptop {
 	}
 
 	public void showSpecificatiion() {
-		Dell dell = new Dell();
-		dell.setBrand("inspiron");
-		dell.setColor("black");
-		dell.setCost(200000.0);
-		dell.setOs("windows");
-		dell.setWeight(2.3);
-		log.info("" +dell.getBrand());
-		log.info("" + dell.getColor());
-		log.info("" +dell.getCost());
-		log.info("" +dell.getRam());
-		log.info("" +dell.getWeight());
-		log.info("" +dell.getOs());
+	
+		log.info("" +getBrand());
+		log.info("" + getColor());
+		log.info("" +getCost());
+		log.info("" +getRam());
+		log.info("" +getWeight());
+		log.info("" +getOs());
 		device.read();
 	}
 }

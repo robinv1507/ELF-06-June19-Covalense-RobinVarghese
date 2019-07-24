@@ -26,11 +26,6 @@ public class Hp implements Laptop {
 
 	}
 	public void showSpecificatiion() {
-		Hp hp=new Hp();
-		hp.setBrand("c2");
-		hp.setColor("black");
-		hp.setCost(220000.0);
-		hp.setOs("windows");
 
 		log.info("" + getBrand());
 		log.info("" + getColor());
