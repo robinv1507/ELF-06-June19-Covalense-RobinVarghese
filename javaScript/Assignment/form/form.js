@@ -8,13 +8,7 @@ var myConformPassword= document.forms[0].password.value;
 localStorage.setItem("email", myEmail);
 localStorage.setItem("password", myPassword);
 localStorage.setItem("cpassword", myConformPassword);
-
-//console.log("lstroer"+localStorage.getItem("email"));
-
-// function tableData(){
-//     return myEmail;
-// }
-//    
+ 
  console.log(myEmail);
     console.log(myPassword);
     console.log(myConformPassword);
