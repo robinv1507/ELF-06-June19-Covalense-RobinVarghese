@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    color: #61DAFB;
+  
+  }
+  .todoMain{
+    color: #3b52ca;
+    width: 600px;
+    margin: 0 auto;
+   
+  }
+  ul {
+    list-style: none;
+  }
+  input{
+    width: 60%;
+    height: 33px;
+    margin-left: 80px;
+  }
+  .App {
+    text-align: center;
+  }
+ .addtask{
+    width: 97px;
+    height: 38px;
+    color: white;
+    background-color: #01bef3;
+}  
