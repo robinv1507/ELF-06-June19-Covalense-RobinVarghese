@@ -1,8 +1,14 @@
 package com.covalense.hibernateapp.onetoone;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -12,11 +18,13 @@ import lombok.Data;
 @Entity
 @Table(name="employee_otherinfo")
 
-public class EmployeeOtherInfoBean {
+public class EmployeeOtherInfoBean implements Serializable{
 	
 	@Id
-	@Column(name="ID")
-	private int id	;	
+	@OneToOne
+	// @PrimaryKeyJoinColumn(name="id")
+	@JoinColumn(name = "id")
+	private EmployeeInfoBean infoBean;
 	@Column(name="ISMARRIED")
 	private boolean ismarried;   
 	@Column(name="PAN ")

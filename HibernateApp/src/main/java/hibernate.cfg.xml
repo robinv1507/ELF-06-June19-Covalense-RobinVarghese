@@ -5,17 +5,26 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/covalense_db</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/covalense_db2?createDatabaseIfNotExist=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         
         <property name="hibernate.connection.pool_size">1</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <property name="hibernate.Format_sql">true</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <mapping class="com.covalense.hibernateapp.dto.EmployeeNewInfoBean"></mapping>
-        <mapping class="com.covalense.hibernateapp.dto.EmployeeInfoBean"></mapping>
+        <property name="hibernate.show_sql">true</property>
+           <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
+    
+          <mapping class="com.covalense.hibernateapp.onetoone.EmployeeOtherInfoBean"></mapping> 
+      
+         <mapping class="com.covalense.hibernateapp.onetoone.EmployeeInfoBean"></mapping>
+      <mapping class="com.covalense.hibernateapp.manytoone.EmployeeAddressInfoBean"></mapping>
+        <mapping class="com.covalense.hibernateapp.manytoone.EmployeeEducationalInfoBean"></mapping>
+        <mapping class="com.covalense.hibernateapp.manytoone.EmployeeExperienceInfoBean"></mapping> 
+         <mapping class="com.covalense.hibernateapp.manytomany.TrainingInfoBean"></mapping>
+         <mapping class="com.covalense.hibernateapp.dto.DepartmentInfoBean"></mapping>
         
+       
         
     </session-factory>
 </hibernate-configuration>

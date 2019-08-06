@@ -1,58 +1,82 @@
 package com.covalense.hibernateapp.onetoone;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.covalense.hibernateapp.dto.DepartmentInfoBean;
+import com.covalense.hibernateapp.manytomany.TrainingInfoBean;
+import com.covalense.hibernateapp.manytoone.EmployeeAddressInfoBean;
+import com.covalense.hibernateapp.manytoone.EmployeeEducationalInfoBean;
+import com.covalense.hibernateapp.manytoone.EmployeeExperienceInfoBean;
+
 import lombok.Data;
 
 @Data
 @SuppressWarnings("serial")
 @Entity
-@Table(name="employee_info")
+@Table(name = "employee_info")
 
 public class EmployeeInfoBean implements Serializable {
-
-	@OneToOne(cascade=CascadeType.ALL)
-	@PrimaryKeyJoinColumn
+	
+	@OneToOne(cascade=CascadeType.ALL,mappedBy="infoBean")
 	private EmployeeOtherInfoBean otherInfo;
-	@Id
-	@Column(name="ID")
-	private int id;
-	@Column(name="NAME")
-	private String name;
-	@Column(name="GENDER")
-	private String gender;
-	@Column(name="SALARY")
-	private double salary;
-	@Column(name="PHONE")
-	private long phone;
-	@Column(name="EMAIL")
-	private String email;
-	@Column(name="DESIGNATION")
-	private String designation;
-	@Column(name="DOB")
-	private Date dob;
 	
-	@Column(name="ACCOUNT_NO")
-	private long acntNo;
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="addPK.infoBean")
+	private List<EmployeeAddressInfoBean> addressInfoBean;
 	
-	@Column(name="JOINING_DATE")
-	private Date joiningDate;
-	@Column(name="DEPPT_ID")
-	private int deptId;
-	@Column(name="MANAGER_ID")
-	private int managerId;
-	@Column(name="AGE")
-	private int age;
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="educationalInfoPKBean.infoBean")
+	private List<EmployeeEducationalInfoBean>  educationalInfoBeans;
 	
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="empPkBean.infoBean")
+	private List<EmployeeExperienceInfoBean>  expInfoBean;
 	
-	
-	
-	
+	@ManyToMany(cascade=CascadeType.ALL,mappedBy="infoBeans")
+	private List<TrainingInfoBean> trainingInfoBeans ;
 
-}//end of class
+	@Id
+	@Column(name = "ID")
+	private int id;
+	@Column(name = "NAME")
+	private String name;
+	@Column(name = "GENDER")
+	private String gender;
+	@Column(name = "SALARY")
+	private double salary;
+	@Column(name = "PHONE")
+	private long phone;
+	@Column(name = "EMAIL")
+	private String email;
+	@Column(name = "DESIGNATION")
+	private String designation;
+	@Column(name = "DOB")
+	private Date dob;
+	@Column(name = "ACCOUNT_NO")
+	private long acntNo;
+	@Column(name = "JOINING_DATE")
+	private Date joiningDate;
+	
+	@ManyToOne//(cascade=CascadeType.ALL)
+	@JoinColumn(name = "DEPPT_ID",referencedColumnName="DEPT_ID")
+	private DepartmentInfoBean departmentInfoBean;
+
+	//many to one relation for manager-id 
+	@ManyToOne
+	@JoinColumn(name="MANAGER_ID",referencedColumnName="id")
+	private EmployeeInfoBean managerId;
+	
+	@Column(name = "AGE")
+	private int age;
+
+}// end of class

@@ -17,7 +17,7 @@ public class HibernateOneToOneTest {
 	public static void main(String[] args) {
 
 		//// prepare data
-		int id = 15;
+		int id = 19;
 	
 		EmployeeInfoBean data = PreparedDataUtil.PrepareData(id);
            save(data);
