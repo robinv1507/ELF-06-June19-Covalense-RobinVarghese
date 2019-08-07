@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+<script src= "https://unpkg.com/react@15.4.2/dist/react.js"></script>
+
+<script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+<style>
+.h1style{
+    color: blue;
+}
+</style>
+</head>
+<body>
+   <div id="root"></div> 
+   <script>
+       items=['India','china'];
+   const item=React.createElement("h1",{id:'demoh1',className:'h1style',item:items}
+                                              ,"Baked salmon")
+//    const ulList=React.createElement("ul",{id:'demoh1',className:'ulStyle'}
+//                        ,React.createElement("li",null,'India')
+//                        ,React.createElement("li",null,'china'));
+//         console.log(item);  
+
+        const ulListArray=React.createElement("ul",null,
+        items.map((val,index)=>{
+           return React.createElement("li",{key:index},val);
+        })  );           
+        console.log(ulListArray); 
+ReactDOM.render(ulListArray, document.getElementById('root'));
+</script>
+</body>
+</html>
