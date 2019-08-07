@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.covalense.emp.beans.EmployeeDepartmentInfoBean;
 import com.covalense.emp.beans.EmployeeInfoBean;
+import com.covalense.emp.beans.EmployeeOtherInfoBean;
 
 public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	@Autowired
@@ -47,24 +48,6 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 		return getEmployeeInfo(Integer.parseInt(id));
 	}
 
-	private boolean saveOrUpdate(EmployeeDepartmentInfoBean bean) {
-		Transaction txn = null;
-
-		try (Session session = sessionFactory.openSession();){
-			txn = session.beginTransaction();
-			session.saveOrUpdate(bean);
-			txn.commit();
-			return true;
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-			if(txn!=null) {
-				txn.rollback();
-			}
-			
-			return false;
-		}
-	}
 	private boolean saveOrUpdate(EmployeeInfoBean bean) {
 		Transaction txn = null;
 
@@ -90,11 +73,11 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 		return saveOrUpdate(bean);
 	}
 
-	@Override
+	/*@Override
 	public boolean updateEmployeeinfo(EmployeeInfoBean bean) {
 
 		return saveOrUpdate(bean);
-	}
+	}*/
 
 	@Override
 	public boolean deleteEmployeeinfo(int id) {
@@ -127,9 +110,9 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	}
 
 	@Override
-	public boolean createDepartmentinfo(EmployeeDepartmentInfoBean bean) {
-		
-		return saveOrUpdate(bean);
+	public boolean updateEmployeeinfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

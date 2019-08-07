@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.covalense.emp.beans.EmployeeDepartmentInfoBean;
 import com.covalense.emp.beans.EmployeeInfoBean;
+import com.covalense.emp.beans.EmployeeOtherInfoBean;
 import com.mysql.jdbc.Driver;
 
 import lombok.extern.java.Log;
@@ -55,12 +56,12 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 				bean.setSalary(rs.getLong("SALARY"));
 				bean.setPhone(rs.getLong("PHONE"));
 				bean.setJoiningDate(rs.getDate("JOINING_DATE"));
-				bean.setAccountNumber(rs.getInt("ACCOUNT_NO"));
+				//bean.setAccountNumber(rs.getInt("ACCOUNT_NO"));
 				bean.setEmail(rs.getString("EMAIL"));
 				bean.setDesignation(rs.getString("DESIGNATION"));
 				bean.setDob(rs.getDate("DOB"));
-				bean.setDepartmentId(rs.getInt("DEPPT_ID"));
-				bean.setManagerId(rs.getInt("MANAGER_ID"));
+				//bean.setDepartmentId(rs.getInt("DEPPT_ID"));
+				//bean.setManagerId(rs.getInt("MANAGER_ID"));
 
 				arraylist.add(bean);
 
@@ -132,12 +133,12 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 				bean.setSalary(rs.getLong("SALARY"));
 				bean.setPhone(rs.getLong("PHONE"));
 				bean.setJoiningDate(rs.getDate("JOINING_DATE"));
-				bean.setAccountNumber(rs.getInt("ACCOUNT_NO"));
+				//.setAccountNumber(rs.getInt("ACCOUNT_NO"));
 				bean.setEmail(rs.getString("EMAIL"));
 				bean.setDesignation(rs.getString("DESIGNATION"));
 				bean.setDob(rs.getDate("DOB"));
-				bean.setDepartmentId(rs.getInt("DEPPT_ID"));
-				bean.setManagerId(rs.getInt("MANAGER_ID"));
+				//bean.setDepartmentId(rs.getInt("DEPPT_ID"));
+				//bean.setManagerId(rs.getInt("MANAGER_ID"));
 
 			} // end of while
 
@@ -167,10 +168,6 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 
 	}// end of getEmployeeInfo(int id)
 
-	@Override
-	public boolean createEmployeeinfo(EmployeeInfoBean bean) {
-		return false;
-	}
 
 	@Override
 	public boolean updateEmployeeinfo(EmployeeInfoBean bean) {
@@ -187,16 +184,18 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 		return false;
 	}
 
-	@Override
-	public boolean createDepartmentinfo(EmployeeDepartmentInfoBean bean) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	@Override
 	public List<EmployeeInfoBean> getSearchEmployeeInfo(int id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean createEmployeeinfo(EmployeeInfoBean bean) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	

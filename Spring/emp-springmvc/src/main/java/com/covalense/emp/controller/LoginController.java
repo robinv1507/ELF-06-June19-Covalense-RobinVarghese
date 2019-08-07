@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.covalense.emp.beans.EmployeeInfoBean;
+import com.covalense.emp.beans.EmployeeOtherInfoBean;
 import com.covalense.emp.common.EmpConstant;
 import com.covalense.emp.dao.EmployeeDAO;
 import com.covalense.emp.dao.EmployeeDAOFactory;
@@ -84,13 +85,13 @@ public class LoginController {
 	@GetMapping("/getRegisterPage")
 	public String getRegisterPage() {
 
-		return "empRegister";
+		return "employeeRegister";
 
 	}
 
 	// submitRegisterData
 	@PostMapping("/submitRegisterData")
-	public String submitRegisterData(EmployeeInfoBean empinfoBean, ModelMap map) {
+	public String submitRegisterData(EmployeeInfoBean empinfoBean,ModelMap map) {
 
 	    
 		if (dao.createEmployeeinfo(empinfoBean)) {

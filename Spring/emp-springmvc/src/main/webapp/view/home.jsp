@@ -41,7 +41,7 @@
       </li>
       <li class="nav-item">
        <form action="../validator/validate/employee/search">
-      <input required class="form-control mr-sm-2" name="id"  type="text" placeholder="Search" aria-label="Search">
+      <input required class="form-control mr-sm-2" name="id"  type="number" placeholder="Search" aria-label="Search">
     <!--  <input tpye="text" name="url" value="search" hidden >  -->
       </li>
      <li class="nav-item">
@@ -58,12 +58,15 @@
   </div>
 </nav>
 <!--header end-->
+<%-- <%  String homeMsg=(String)request.getAttribute(homeMsg); 
+if(homeMsg!=null){ %> --%>
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
    <strong>${homeMsg}  welcome to emp portal</strong>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+<%-- <%} %> --%>
 <!-- body of home -->
 
 		           <div class="card " style="width: 18rem;width: 29rem; position: absolute;  top: 191px; left: 185px;"> 
