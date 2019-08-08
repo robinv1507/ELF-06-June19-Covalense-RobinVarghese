@@ -62,7 +62,7 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name = "JOINING_DATE")
 	private Date joiningDate;
 	
-	@ManyToOne//(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "DEPPT_ID",referencedColumnName="DEPT_ID")
 	private DepartmentInfoBean departmentInfoBean;
 

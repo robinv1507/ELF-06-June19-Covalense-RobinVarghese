@@ -2,6 +2,7 @@ package com.covalense.emp.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.covalense.emp.beans.EmployeeEducationalInfoBean;
 import com.covalense.emp.beans.EmployeeInfoBean;
 import com.covalense.emp.beans.EmployeeOtherInfoBean;
 import com.covalense.emp.common.EmpConstant;
@@ -92,6 +94,11 @@ public class LoginController {
 	// submitRegisterData
 	@PostMapping("/submitRegisterData")
 	public String submitRegisterData(EmployeeInfoBean empinfoBean,ModelMap map) {
+		
+		List<EmployeeEducationalInfoBean> educationalInfoBeans=empinfoBean.getEducationalInfoBeans();
+		for(EmployeeEducationalInfoBean empEdu : educationalInfoBeans ) {
+			empEdu.getEducationalInfoPKBean().setInfoBean(empinfoBean);
+		}
 
 	    
 		if (dao.createEmployeeinfo(empinfoBean)) {

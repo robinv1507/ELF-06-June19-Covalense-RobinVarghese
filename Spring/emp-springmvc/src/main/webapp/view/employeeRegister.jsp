@@ -74,7 +74,7 @@
                               <div class="form-row">
                                     <div class="form-group col-md-6">
                                       <label for="inputEmail4">Salary</label>
-                                      <input type="text" name="salary" class="form-control"  placeholder="Please EnterDesignation">
+                                      <input type="number" name="salary" class="form-control"  placeholder="Please EnterDesignation">
                                     </div>
                                     <div class="form-group col-md-6">
                                       <label for="inputPassword4">Department ID</label>
@@ -273,7 +273,7 @@
                                                    <div class="form-row">
                                                          <div class="form-group col-md-6">
                                                            <label for="inputEmail4">Percentage</label>
-                                                           <input type="text" name="educationalInfoBeans[0].percentage" class="form-control"  placeholder="Please Enter Percentage">
+                                                           <input type="number" name="educationalInfoBeans[0].percentage" class="form-control"  placeholder="Please Enter Percentage">
                                                          </div>
                                                          <div class="form-group col-md-6">
                                                            <label for="inputPassword4">Location </label>
@@ -422,7 +422,7 @@
         
         <div class="form-group col-md-6">
           <label for="inputPassword4">State</label>
-          <input type="email" class="form-control" name="addressInfoBean[0].state"  placeholder=" Enter State ">
+          <input type="text" class="form-control" name="addressInfoBean[0].state"  placeholder=" Enter State ">
         </div>
         <div  class="form-group col-md-6">
             <label for="inputEmail4">Address1</label><br>
@@ -444,7 +444,7 @@
            
             <div class="form-group col-md-6">
                 <label for="Pincode">Pincode</label>
-                <input type="date" name="addressInfoBean[0].pincode" class="form-control"  placeholder="enter  Pincode">
+                <input type="number" name="addressInfoBean[0].pincode" class="form-control"  placeholder="enter  Pincode">
                </div>
          
           </div>
@@ -478,7 +478,7 @@
         
         <div class="form-group col-md-6">
           <label for="inputPassword4">State</label>
-          <input type="email" class="form-control" name="addressInfoBean[1].state"  placeholder=" Enter State ">
+          <input type="text" class="form-control" name="addressInfoBean[1].state"  placeholder=" Enter State ">
         </div>
         <div  class="form-group col-md-6">
             <label for="inputEmail4">Address1</label><br>
@@ -500,7 +500,7 @@
            
             <div class="form-group col-md-6">
                 <label for="Pincode">Pincode</label>
-                <input type="date" name="addressInfoBean[1].pincode" class="form-control"  placeholder="enter  Pincode">
+                <input type="number" name="addressInfoBean[1].pincode" class="form-control"  placeholder="enter  Pincode">
                </div>
          
           </div>
@@ -518,11 +518,6 @@
          </div>
 
               </div>
-
-
-
-
-
 
 
     </form>
