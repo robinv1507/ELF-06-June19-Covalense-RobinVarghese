@@ -22,7 +22,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.covalense.emp.beans.EmployeeAddressInfoBean;
 import com.covalense.emp.beans.EmployeeEducationalInfoBean;
+import com.covalense.emp.beans.EmployeeEducationalInfoPKBean;
+import com.covalense.emp.beans.EmployeeExperienceInfoBean;
 import com.covalense.emp.beans.EmployeeInfoBean;
 import com.covalense.emp.beans.EmployeeOtherInfoBean;
 import com.covalense.emp.common.EmpConstant;
@@ -59,9 +62,10 @@ public class LoginController {
 		return EmpConstant.VIEW_LOGIN_PAGE;
 	}
 
+	// authentication for login
 	@PostMapping("/authenticate")
-	public String authenticate(int id, String password, HttpServletRequest request
-			                    ,@Value("${loginErrMessage}") String loginErrMessage) {
+	public String authenticate(int id, String password, HttpServletRequest request,
+			@Value("${loginErrMessage}") String loginErrMessage) {
 
 		EmployeeInfoBean bean = dao.getEmployeeInfo(id);
 
@@ -70,8 +74,8 @@ public class LoginController {
 
 			HttpSession session = request.getSession(true);
 			session.setAttribute("bean", bean);
-			
-			session.setAttribute("homeMsg", "successfully logged in");
+
+			session.setAttribute("logMsg", "successfully logged in");
 
 			return EmpConstant.VIEW_HOME_PAGE;
 
@@ -93,15 +97,29 @@ public class LoginController {
 
 	// submitRegisterData
 	@PostMapping("/submitRegisterData")
-	public String submitRegisterData(EmployeeInfoBean empinfoBean,ModelMap map) {
-		
-		List<EmployeeEducationalInfoBean> educationalInfoBeans=empinfoBean.getEducationalInfoBeans();
-		for(EmployeeEducationalInfoBean empEdu : educationalInfoBeans ) {
-			empEdu.getEducationalInfoPKBean().setInfoBean(empinfoBean);
+	public String submitRegisterData(EmployeeInfoBean empinfoBean, int managerId, ModelMap map) {
+		// for EmployeeEducationalInfoBean
+		List<EmployeeEducationalInfoBean> educationalInfoBeans = empinfoBean.getEducationalInfoBeans();
+		for (EmployeeEducationalInfoBean empEdu : educationalInfoBeans) {
+			EmployeeEducationalInfoPKBean empEdupkbean = empEdu.getEducationalInfoPKBean();
+			empEdupkbean.setInfoBean(empinfoBean);
+
+		}
+		// for EmployeeAddressInfoBean
+		List<EmployeeAddressInfoBean> eAddressInfoBeans = empinfoBean.getAddressInfoBean();
+		for (EmployeeAddressInfoBean empAddress : eAddressInfoBeans) {
+			empAddress.getAddPK().setInfoBean(empinfoBean);
+		}
+		// for EmployeeExperienceInfoBean
+		List<EmployeeExperienceInfoBean> empExpInfoBeans = empinfoBean.getExpInfoBean();
+		for (EmployeeExperienceInfoBean empExp : empExpInfoBeans) {
+			empExp.getEmpPkBean().setInfoBean(empinfoBean);
 		}
 
-	    
-		if (dao.createEmployeeinfo(empinfoBean)) {
+		EmployeeOtherInfoBean otherInfoBean = empinfoBean.getOtherInfo();
+		otherInfoBean.setInfoBean(empinfoBean);
+
+		if (dao.createEmployeeinfo(empinfoBean, managerId)) {
 			map.addAttribute("errPswMsg", "Registration Finished Successfully");
 			return EmpConstant.VIEW_LOGIN_PAGE;
 		} else {
@@ -112,14 +130,33 @@ public class LoginController {
 
 	/* ==============logout============ */
 	@GetMapping("/logout")
-	public String logout(HttpSession session, ModelMap map,
-			 @Value("${logoutErrMessage}") String logoutErrMessage) {
-		
+	public String logout(HttpSession session, ModelMap map, @Value("${logoutErrMessage}") String logoutErrMessage) {
+
 		session.invalidate();
 		map.addAttribute("logMsg", logoutErrMessage);
-		return EmpConstant.VIEW_LOGIN_PAGE;//loginPage.jsp
+		return EmpConstant.VIEW_LOGIN_PAGE;// loginPage.jsp
 	}
 
-	 
+	// updateEmployee
+	@GetMapping("/updateEmployee")
+	public String getUpdateEmployee() {
+
+		return "updateEmployee";
+	}// end of getUpdateEmployee
+	// updateEmployee
+		@PostMapping("/updateEmployee")
+		public String updateEmployee(EmployeeInfoBean empinfoBean, int managerId,ModelMap map){
+			
+			if (dao.createEmployeeinfo(empinfoBean, managerId)) {
+				map.addAttribute("errPswMsg", "Employee details Updated Finished Successfully");
+				return EmpConstant.VIEW_HOME_PAGE;
+			} else {
+				map.addAttribute("errPswMsg", " Employee details Updation Failed ,Try again");
+				return EmpConstant.VIEW_HOME_PAGE;
+			} // end of else
+			
+
+			
+		}// end of getUpdateEmployee
 
 }// end of class

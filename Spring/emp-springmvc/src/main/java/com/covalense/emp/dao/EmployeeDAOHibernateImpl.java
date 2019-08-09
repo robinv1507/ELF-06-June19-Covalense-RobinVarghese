@@ -12,8 +12,10 @@ import com.covalense.emp.beans.EmployeeOtherInfoBean;
 
 public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	@Autowired
-	private SessionFactory sessionFactory;
-
+	private static SessionFactory sessionFactory;
+	
+		
+	
 	@Override
 	public List<EmployeeInfoBean> getAllEmployeeInfo() {
 		Session session = sessionFactory.openSession();
@@ -33,12 +35,11 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	}
 	@Override
 	public EmployeeInfoBean getEmployeeInfo(int id) {
-		EmployeeInfoBean bean =null;
 		
-		try(Session session=sessionFactory.openSession();) {
+		Session session=sessionFactory.openSession();
 			
-		    bean = session.get(EmployeeInfoBean.class, id);
-	    }
+		EmployeeInfoBean bean= session.get(EmployeeInfoBean.class, id);
+	    
 		return bean;
 	}
 
@@ -67,11 +68,6 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 		}
 	}
 
-	@Override
-	public boolean createEmployeeinfo(EmployeeInfoBean bean) {
-
-		return saveOrUpdate(bean);
-	}
 
 	/*@Override
 	public boolean updateEmployeeinfo(EmployeeInfoBean bean) {
@@ -113,6 +109,24 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	public boolean updateEmployeeinfo(EmployeeInfoBean bean) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public boolean createEmployeeinfo(EmployeeInfoBean empinfoBean, int managerId) {
+		
+		
+		 EmployeeInfoBean managerBean=EmployeeDAOHibernateImpl.getEmployeeInfoBean(managerId);
+		 managerBean.setManagerId(managerBean);
+		
+		return false;
+	}
+	public static EmployeeInfoBean getEmployeeInfoBean(int id) {
+		EmployeeInfoBean bean =null;
+		
+		try(Session session=sessionFactory.openSession();) {
+			
+		    bean = session.get(EmployeeInfoBean.class, id);
+	    }
+		return bean;
 	}
 
 }

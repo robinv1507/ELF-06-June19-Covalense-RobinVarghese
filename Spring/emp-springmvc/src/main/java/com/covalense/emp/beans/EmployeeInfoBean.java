@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import lombok.Data;
 
@@ -28,15 +30,19 @@ public class EmployeeInfoBean implements Serializable {
 	@OneToOne(cascade=CascadeType.ALL,mappedBy="infoBean")
 	private EmployeeOtherInfoBean otherInfo;
 	
+	//@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="addPK.infoBean")
 	private List<EmployeeAddressInfoBean> addressInfoBean;
 	
+	//@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="educationalInfoPKBean.infoBean")
 	private List<EmployeeEducationalInfoBean>  educationalInfoBeans;
 	
+	//@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="empPkBean.infoBean")
 	private List<EmployeeExperienceInfoBean>  expInfoBean;
 	
+	//@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(cascade=CascadeType.ALL,mappedBy="infoBeans")
 	private List<TrainingInfoBean> trainingInfoBeans ;
 
@@ -48,9 +54,9 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name = "GENDER")
 	private String gender;
 	@Column(name = "SALARY")
-	private double salary;
+	private Double salary;
 	@Column(name = "PHONE")
-	private long phone;
+	private Long phone;
 	@Column(name = "EMAIL")
 	private String email;
 	@Column(name = "DESIGNATION")
@@ -58,7 +64,7 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name = "DOB")
 	private Date dob;
 	@Column(name = "ACCOUNT_NO")
-	private long accountNumber;
+	private Long accountNumber;
 	@Column(name = "JOINING_DATE")
 	private Date joiningDate;
 	
@@ -72,7 +78,7 @@ public class EmployeeInfoBean implements Serializable {
 	private EmployeeInfoBean managerId;
 	
 	@Column(name = "AGE")
-	private int age;
+	private Integer age;
 	@Column(name = "password")
 	private String password;
 

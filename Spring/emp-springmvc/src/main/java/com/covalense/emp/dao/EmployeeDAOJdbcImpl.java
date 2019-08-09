@@ -53,7 +53,7 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 				bean.setName(rs.getString("NAME"));
 				bean.setAge(rs.getInt("AGE"));
 				bean.setGender(rs.getString("GENDER"));
-				bean.setSalary(rs.getLong("SALARY"));
+				//bean.setSalary(rs.getLong("SALARY"));
 				bean.setPhone(rs.getLong("PHONE"));
 				bean.setJoiningDate(rs.getDate("JOINING_DATE"));
 				//bean.setAccountNumber(rs.getInt("ACCOUNT_NO"));
@@ -130,7 +130,7 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 				bean.setName(rs.getString("NAME"));
 				bean.setAge(rs.getInt("AGE"));
 				bean.setGender(rs.getString("GENDER"));
-				bean.setSalary(rs.getLong("SALARY"));
+				//bean.setSalary(rs.getLong("SALARY"));
 				bean.setPhone(rs.getLong("PHONE"));
 				bean.setJoiningDate(rs.getDate("JOINING_DATE"));
 				//.setAccountNumber(rs.getInt("ACCOUNT_NO"));
@@ -192,8 +192,9 @@ public class EmployeeDAOJdbcImpl implements EmployeeDAO{
 		return null;
 	}
 
+
 	@Override
-	public boolean createEmployeeinfo(EmployeeInfoBean bean) {
+	public boolean createEmployeeinfo(EmployeeInfoBean empinfoBean, int managerId) {
 		// TODO Auto-generated method stub
 		return false;
 	}

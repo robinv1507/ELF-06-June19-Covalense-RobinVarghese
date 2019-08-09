@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                           <label for="inputPassword4">Manager ID</label>
-                                          <input type="text" name="managerId.id" class="form-control"  placeholder="Please Enter Manager ID ">
+                                          <input type="text" name="managerId" class="form-control"  placeholder="Please Enter Manager ID ">
     
                                          
                                         </div>
@@ -231,11 +231,11 @@
                 
                                        <div class="form-group col-md-6">
                                          <label for="inputPassword4">Education Type</label>
-                                         <input required type="text" name="educationalInfoBeans[0].educationalType" class="form-control"  placeholder=" Education Type ">
+                                         <input required type="text" name="educationalInfoBeans[0].educationalInfoPKBean.educationalType" class="form-control"  placeholder=" Education Type ">
                                        </div>
                                        <div class="form-group col-md-6">
                                         <label for="inputEmail4">Degree Type</label>
-                                        <input required type="text" name="DegreeType" name="educationalInfoBeans[0].degreeType" class="form-control"  placeholder="Please Enter Degree Type">
+                                        <input required type="text"  name="educationalInfoBeans[0].degreeType" class="form-control"  placeholder="Please Enter Degree Type">
                                       </div>
                                    
                                      </div>
@@ -289,11 +289,11 @@
                 
                                        <div class="form-group col-md-6">
                                          <label for="inputPassword4">Education Type</label>
-                                         <input required type="text" name="educationalInfoBeans[1].educationalType" class="form-control"  placeholder=" Education Type ">
+                                         <input required type="text" name="educationalInfoBeans[1].educationalInfoPKBean.educationalType" class="form-control"  placeholder=" Education Type ">
                                        </div>
                                        <div class="form-group col-md-6">
                                         <label for="inputEmail4">Degree Type</label>
-                                        <input required type="text" name="DegreeType" name="educationalInfoBeans[1].degreeType" class="form-control"  placeholder="Please Enter Degree Type">
+                                        <input required type="text"  name="educationalInfoBeans[1].degreeType" class="form-control"  placeholder="Please Enter Degree Type">
                                       </div>
                                    
                                      </div>
@@ -439,7 +439,7 @@
               
               <label for="inputPassword4">Country</label>
           
-              <input type="text" name="addressInfoBean[0].addressOne" class="form-control"  placeholder="Enter Country">
+              <input type="text" name="addressInfoBean[0].country" class="form-control"  placeholder="Enter Country">
             </div>
            
             <div class="form-group col-md-6">
@@ -481,7 +481,7 @@
           <input type="text" class="form-control" name="addressInfoBean[1].state"  placeholder=" Enter State ">
         </div>
         <div  class="form-group col-md-6">
-            <label for="inputEmail4">Address1</label><br>
+            <label for="inputEmail4">Address2</label><br>
             <input type="text" name="addressInfoBean[1].addressTwo" class="form-control"  placeholder=" Enter Address1">
        
         </div>
@@ -495,7 +495,7 @@
               
               <label for="inputPassword4">Country</label>
           
-              <input type="text" name="addressInfoBean[1].addressOne" class="form-control"  placeholder="Enter Country">
+              <input type="text" name="addressInfoBean[1].country" class="form-control"  placeholder="Enter Country">
             </div>
            
             <div class="form-group col-md-6">

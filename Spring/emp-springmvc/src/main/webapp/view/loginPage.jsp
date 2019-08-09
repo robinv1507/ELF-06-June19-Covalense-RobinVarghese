@@ -140,10 +140,10 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="number" name="id" class="form-control" placeholder="Employee Id"  />
+                                            <input type="number" name="id" required class="form-control" placeholder="Employee Id"  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="password" name="password" />
+                                            <input type="password" required class="form-control" placeholder="password" name="password" />
                                         </div>
                                                                              
                                     
