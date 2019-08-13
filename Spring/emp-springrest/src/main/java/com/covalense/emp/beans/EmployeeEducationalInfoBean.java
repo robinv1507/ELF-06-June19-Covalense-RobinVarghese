@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 
 @Entity
 @Table(name="employee_educational_info")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class EmployeeEducationalInfoBean implements Serializable{
 	@EmbeddedId
 	private EmployeeEducationalInfoPKBean educationalInfoPKBean;

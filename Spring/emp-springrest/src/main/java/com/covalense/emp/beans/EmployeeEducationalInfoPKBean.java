@@ -9,11 +9,14 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlTransient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Embeddable
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class EmployeeEducationalInfoPKBean implements Serializable {
 
-	@XmlTransient
+	//@XmlTransient
+		@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id")
 	private EmployeeInfoBean infoBean;

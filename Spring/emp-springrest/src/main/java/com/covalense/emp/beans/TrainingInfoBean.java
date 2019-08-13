@@ -14,9 +14,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlTransient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "training_info")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class TrainingInfoBean {
 	
 	@Id
@@ -28,7 +30,8 @@ public class TrainingInfoBean {
 	private int duration;
 	@Column(name = "Course_Type")
 	private String courseType;
-	@XmlTransient
+	//@XmlTransient
+		@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "Employee_Training_info", joinColumns = {
 			@JoinColumn(name = "Course_ID") }, inverseJoinColumns = { @JoinColumn(name = "id") })

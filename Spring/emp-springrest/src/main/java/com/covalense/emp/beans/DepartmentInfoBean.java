@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "department_info")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class DepartmentInfoBean implements Serializable {
 
 	@Id

@@ -24,11 +24,12 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@XmlRootElement(name = "employee-info-bean")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlRootElement(name = "employee-info-bean")
+//@XmlAccessorType(XmlAccessType.FIELD)
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class,property="id")
 @JsonRootName(value="employee-info-bean")
 @SuppressWarnings("serial")
@@ -36,26 +37,27 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Table(name = "employee_info")
 
 public class EmployeeInfoBean implements Serializable {
-	@XmlElement(name = "other-info")
+	//@XmlElement(name = "other-info")
+	@JsonProperty(value="other-info")
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "infoBean")
 	private EmployeeOtherInfoBean otherInfo;
 
-	@XmlElement(name = "address-info")
+	//@XmlElement(name = "address-info")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "addPK.infoBean")
 	private List<EmployeeAddressInfoBean> addressInfoBean;
 
-	@XmlElement(name = "educational-info")
+	//@XmlElement(name = "educational-info")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "educationalInfoPKBean.infoBean")
 	private List<EmployeeEducationalInfoBean> educationalInfoBeans;
 
-	@XmlElement(name = "experience-info")
+	//@XmlElement(name = "experience-info")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "empPkBean.infoBean")
 	private List<EmployeeExperienceInfoBean> expInfoBean;
 
-	@XmlElement(name = "training-info")
+	//@XmlElement(name = "training-info")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "infoBeans")
 	private List<TrainingInfoBean> trainingInfoBeans;
@@ -82,13 +84,13 @@ public class EmployeeInfoBean implements Serializable {
 	@Column(name = "JOINING_DATE")
 	private Date joiningDate;
 
-	@XmlElement(name = "department-info")
+	//@XmlElement(name = "department-info")
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "DEPPT_ID", referencedColumnName = "DEPT_ID")
 	private DepartmentInfoBean departmentInfoBean;
 
 	// many to one relation for manager-id
-	@XmlElement(name = "manager-id")
+	//@XmlElement(name = "manager-id")
 	@ManyToOne
 	@JoinColumn(name = "MANAGER_ID", referencedColumnName = "id")
 	private EmployeeInfoBean managerId;
