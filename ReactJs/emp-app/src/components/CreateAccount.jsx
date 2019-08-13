@@ -13,9 +13,27 @@ export default class CreateAccount extends Component {
 
     }
 
+    ValidateForm(event){
+        event.preventDefault();
+        console.log('ValidateForm');
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+                      .test(this.state.email) &&
+                    this.state.email.trim()!=''
+                       &&this.state.phoneno.length==10){
+
+                    this.state.name.trim();
+                        return true;          
+        }
+        else{
+            return false; 
+        }
+    }
+        
     postData(event){
         event.preventDefault();
         console.log('post data',this.state);
+
+        if(this.ValidateForm(event)){
 
         let accountData=this.state;
         Axios.post('https://emp-app-b9c12.firebaseio.com/accounts.json'
@@ -31,6 +49,7 @@ export default class CreateAccount extends Component {
             console.log("error ",error);
 
         })
+    }
 
     }
 
@@ -43,15 +62,15 @@ export default class CreateAccount extends Component {
     <div className="col">
       <input type="text" onChange={(event)=>{
           this.setState({name:event.target.value})}} 
-          value={this.state.name} className="form-control" placeholder="Name"/>
+          value={this.state.name} className="form-control" required placeholder="Name"/>
     </div><br></br>
     <div className="col">
       <input type="text"  onChange={(event)=>{
-          this.setState({email:event.target.value})}}  value={this.state.email} className="form-control" placeholder="Email"/>
+          this.setState({email:event.target.value})}}  value={this.state.email} className="form-control" required placeholder="Email"/>
     </div><br></br>
     <div className="col">
       <input type="number"  onChange={(event)=>{
-          this.setState({phoneno:event.target.value})}} value={this.state.phoneno} className="form-control" placeholder="Phone number"/>
+          this.setState({phoneno:event.target.value})}} value={this.state.phoneno} className="form-control" required placeholder="Phone number"/>
     </div><br></br>
   </div>
 
