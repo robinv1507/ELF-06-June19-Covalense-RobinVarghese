@@ -1,22 +1,3 @@
-/*!
-
- =========================================================
- * Material Kit React - v1.7.0 based on Material Kit - v2.0.2
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/material-kit-react
- * Copyright 2019 Creative Tim (https://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-
-// ##############################
-// // // Variables - Styles that are used on more than one component
-// #############################
 
 const drawerWidth = 260;
 
@@ -69,7 +50,7 @@ const defaultFont = {
   lineHeight: "1.5em"
 };
 
-const primaryColor = "#9c27b0";
+const primaryColor = "#1c85e3";
 const warningColor = "#ff9800";
 const dangerColor = "#f44336";
 const successColor = "#4caf50";
@@ -78,9 +59,7 @@ const roseColor = "#e91e63";
 const grayColor = "#999999";
 
 const primaryBoxShadow = {
-  boxShadow:
-    "0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)"
-};
+  boxShadow:"0 12px 20px -1px rgba(16, 255, 6, 0.26), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)"  };
 const infoBoxShadow = {
   boxShadow:
     "0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)"
@@ -124,7 +103,7 @@ const infoCardHeader = {
 };
 const primaryCardHeader = {
   color: "#fff",
-  background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
+  background: "linear-gradient(60deg, #6ee348, #157eea)",
   ...primaryBoxShadow
 };
 const roseCardHeader = {

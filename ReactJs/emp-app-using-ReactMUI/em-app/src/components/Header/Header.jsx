@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Material Kit React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-kit-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -102,35 +86,8 @@ class Header extends React.Component {
               brandComponent
             )}
           </div>
-          <Hidden smDown implementation="css">
-            {rightLinks}
-          </Hidden>
-          <Hidden mdUp>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-            >
-              <Menu />
-            </IconButton>
-          </Hidden>
-        </Toolbar>
-        <Hidden mdUp implementation="js">
-          <Drawer
-            variant="temporary"
-            anchor={"right"}
-            open={this.state.mobileOpen}
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            onClose={this.handleDrawerToggle}
-          >
-            <div className={classes.appResponsive}>
-              {leftLinks}
-              {rightLinks}
-            </div>
-          </Drawer>
-        </Hidden>
+        
+         </Toolbar>
       </AppBar>
     );
   }
