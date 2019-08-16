@@ -14,7 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import {Link} from 'react-router-dom'
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function HomeHeader() {
+export default function HomeHeader(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -114,8 +114,8 @@ export default function HomeHeader() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
+      <Link to='/login'><MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -130,22 +130,7 @@ export default function HomeHeader() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -160,6 +145,7 @@ export default function HomeHeader() {
     </Menu>
   );
 
+  //bean=JSON.parse(localStorage.getItem("bean"))
   return (
     <div className={classes.grow}>
       <AppBar position="static">
@@ -190,16 +176,7 @@ export default function HomeHeader() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+         
             <IconButton
               edge="end"
               aria-label="account of current user"
@@ -209,8 +186,11 @@ export default function HomeHeader() {
               color="inherit"
             >
               <AccountCircle />
+
             </IconButton>
+           
           </div>
+          {props.name}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
