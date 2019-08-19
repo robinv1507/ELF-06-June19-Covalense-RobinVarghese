@@ -64,7 +64,7 @@ public class EmployeeInfoBean implements Serializable {
 
 	@Id
 	@Column(name = "ID")
-	private Integer id;
+	private int id;
 	@Column(name = "NAME")
 	private String name;
 	@Column(name = "GENDER")

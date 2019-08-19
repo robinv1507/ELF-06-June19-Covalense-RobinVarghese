@@ -2,9 +2,10 @@ package com.covalense.springboot.dto;
 
 import java.io.Serializable;
 
-
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -18,14 +19,24 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "employee_otherinfo")
-@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class EmployeeOtherInfoBean implements Serializable {
 
 	//@XmlTransient
-	@JsonIgnore
+	//@JsonIgnore
 	@Id
+	 @Column(name="otherinfo_id")
+	 @GeneratedValue 
+	 private int otherInfoId;
+	  
+	 public void setOtherInfoId(int otherInfoId) {
+		this.otherInfoId = otherInfoId;
+	}
+	public int getOtherInfoId() { return otherInfoId; }
+	 
+	 @JsonIgnore
 	@OneToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "id",referencedColumnName = "id",unique = true,nullable = false)
 	private EmployeeInfoBean infoBean;
 	@Column(name = "ISMARRIED")
 	private boolean ismarried;
@@ -55,6 +66,7 @@ public class EmployeeOtherInfoBean implements Serializable {
 	private String spouseName;
 	
 	// getters and setters
+	
 	public EmployeeInfoBean getInfoBean() {
 		return infoBean;
 	}
