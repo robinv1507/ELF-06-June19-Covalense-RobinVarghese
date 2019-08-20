@@ -94,6 +94,9 @@ export default function HomeHeader(props) {
   }
 
   function handleMenuClose() {
+    console.log(localStorage.getItem('bean'));
+    localStorage.clear();
+    console.log(localStorage.getItem('bean'));
     setAnchorEl(null);
     handleMobileMenuClose();
   }
@@ -114,6 +117,7 @@ export default function HomeHeader(props) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+
       <Link to='/login'><MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
       </Link>
     </Menu>
