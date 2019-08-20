@@ -1,0 +1,46 @@
+TABLE Info
+
+1.users
+2.books
+3.borrow
+
+
+1.users
+--
+-- Table structure for table users
+--
+  `userId` int(11) PK NOT NULL,
+  `FullName` varchar(120) 
+  `EmailId` varchar(120) 
+  `MobileNumber` char(11) 
+  `Password` varchar(120) 
+  `role`     varchar(120)
+ 
+ -- --------------------------------------------------------
+2.books
+--
+-- Table structure for table `books`
+--
+
+  `Bookid` int(11) PK 
+  `BookName` varchar(255) 
+  `Catagery``varchar(255)
+  `description`varchar(255)
+  `AuthorName` int(11) 
+  `ISBNNumber` int(11) 
+  `Language`  varchar(255) 
+   Noofcopies  INT(10)
+  
+ -- --------------------------------------------------------
+3.Borrow
+--
+-- Table structure for table `Borrow`
+--
+`bookid` int(11) PK
+`userId` int(255)
+`dateOfBorrowed` TIMESTAMP
+`dateOfReturn` TIMESTAMP
+`requestStatus` TINYINT
+`requestDate` TIMESTAMP
+
+
