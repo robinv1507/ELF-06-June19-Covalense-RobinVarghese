@@ -1,7 +1,7 @@
 
 import React from "react";
-/* import HomeHeader from "views/NavBar/HomeHeader.jsx"; */
-import HomeData from "./HomeData.jsx";
+
+import LibrarianTable from "views/Admin/HomePage/Librarian/LibrarianTable.jsx";
 import SideBar from "views/Admin/SideBar/SideBar.jsx";
 class Home extends React.Component {
   constructor(props) {
@@ -20,6 +20,8 @@ class Home extends React.Component {
        {/*  <HomeHeader/> */}
              <br></br>
              <SideBar/>
+             <LibrarianTable/>
+
           {/* <div>
            <HomeData/>
 

@@ -1,7 +1,6 @@
 
 import React from "react";
-/* import HomeHeader from "views/NavBar/HomeHeader.jsx"; */
-import HomeData from "./HomeData.jsx";
+
 import SideBar from "views/Admin/SideBar/SideBar.jsx";
 class Home extends React.Component {
   constructor(props) {

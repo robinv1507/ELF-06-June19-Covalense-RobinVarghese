@@ -107,8 +107,8 @@ class LoginPage extends React.Component {
                   
                     <CardBody>
                     <br/><br/><br></br>
-                    <Input style={{width:'100%'}} id="id" type="text"
-                              placeholder="User Name"
+                    <Input style={{width:'100%'}} id="id" type="number"
+                              placeholder="User Id"
                               onChange={(event)=>{
                                 this.setState({id:event.target.value})
                               }}
@@ -134,11 +134,11 @@ class LoginPage extends React.Component {
                      
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                    <Link to="/register"> <Button   color="success" size="mm">
+                    {/* <Link to="/register"> <Button   color="success" size="mm">
                        Register
                       </Button>
-                      </Link>
-                      <Link to="/home">
+                      </Link> */}
+                      <Link to="/adminHome">
                         <Button   type="submit" color="primary" size="mm">
                         Login
                       </Button>

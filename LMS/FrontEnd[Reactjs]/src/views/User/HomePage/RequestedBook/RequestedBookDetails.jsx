@@ -1,16 +1,15 @@
 
 import React from "react";
-/* import HomeHeader from "views/NavBar/HomeHeader.jsx"; */
-import HomeData from "./HomeData.jsx";
-import SideBar from "views/Admin/SideBar/SideBar.jsx";
+import RequestedBookTable from "views/User/HomePage/RequestedBook/RequestedBookTable.jsx";
+import SideBar from "views/User/SideBar/SideBar.jsx";
 class Home extends React.Component {
   constructor(props) {
     super(props);
     
     // we use this to make the card to appear after the page has been rendered
-    this.state = {
+    /* this.state = {
       bean:JSON.parse(localStorage.getItem("bean"))
-    };
+    }; */
   }
   render() {
     
@@ -20,6 +19,8 @@ class Home extends React.Component {
        {/*  <HomeHeader/> */}
              <br></br>
              <SideBar/>
+             <RequestedBookTable/>
+
           {/* <div>
            <HomeData/>
 
