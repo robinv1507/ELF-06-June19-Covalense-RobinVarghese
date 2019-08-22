@@ -46,24 +46,34 @@ class LoginPage extends React.Component {
     );
   }
 
-  validateEmployee(event){
+  validateUser(event){
 
     event.preventDefault();
-  Axios.post('http://localhost/emp-springrest/login/',null,
+  Axios.post('http://localhost:700/login',null,
   {params : {id:this.state.id,password:this.state.password}})
   .then((res)=>{
     
-     if(res.data.msg=="Succesfull")
+     if(res.data.statusCode==201)
     {
-      let empdata=res.data.data[0];
-      console.log("empdata",empdata)
-      localStorage.setItem("bean",JSON.stringify(empdata))
-
- console.log("bean",localStorage.getItem("bean"))
-      this.props.history.push('/home');
+      
+      let userData=res.data.userData[0];
+      console.log("userdata",userData)
+      localStorage.setItem("userBean",JSON.stringify(userData))
+      if(userData.userType=="admin"){
+        this.props.history.push('/adminHome');
+      }else if(userData.userType=="user"){
+        this.props.history.push('/userHome');
+      }else if(userData.userType=="librarian"){
+        this.props.history.push('/lbHome');
+        
+      }
+    
+      console.log("Userbean",localStorage.getItem("userBean"))
+     
 
 
     } else{
+      //<h1>invalid id</h1>
       alert("invalid Id or password");
 
     }
@@ -99,7 +109,7 @@ class LoginPage extends React.Component {
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[this.state.cardAnimaton]}>
-                  <form onSubmit={this.validateEmployee.bind(this)} >
+                  <form onSubmit={this.validateUser.bind(this)} >
                     <CardHeader color="primary" className={classes.cardHeader}>
                       <h4>Login</h4>
                     
@@ -107,7 +117,7 @@ class LoginPage extends React.Component {
                   
                     <CardBody>
                     <br/><br/><br></br>
-                    <Input style={{width:'100%'}} id="id" type="number"
+                    <Input style={{width:'100%'}} id="id" type="number" required
                               placeholder="User Id"
                               onChange={(event)=>{
                                 this.setState({id:event.target.value})
@@ -120,7 +130,7 @@ class LoginPage extends React.Component {
                                   />
                                   <br/><br/><br></br>
                      <Input style={{width:'100%'}} id="password" type="password"
-                              placeholder="Password"
+                              placeholder="Password" required
                               onChange={(event)=>{
                                 this.setState({password:event.target.value})
                               }}
@@ -138,11 +148,11 @@ class LoginPage extends React.Component {
                        Register
                       </Button>
                       </Link> */}
-                      <Link to="/adminHome">
+                      {/* <Link to="/adminHome"> */}
                         <Button   type="submit" color="primary" size="mm">
                         Login
                       </Button>
-                      </Link> 
+                      {/* </Link>  */}
                     
                     </CardFooter>
                     <Link to="/forgetPassword">   <Typography align='center' variant="overline" display="block" className={classes.Fps} gutterBottom>

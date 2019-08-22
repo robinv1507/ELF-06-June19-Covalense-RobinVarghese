@@ -176,9 +176,9 @@ export default function MiniDrawer(props) {
   }
 
   function handleMenuClose() {
-    console.log(localStorage.getItem('bean'));
+    console.log(localStorage.getItem('userBean'));
     localStorage.clear();
-    console.log(localStorage.getItem('bean'));
+    console.log(localStorage.getItem('userBean'));
     setAnchorEl(null);
     handleMobileMenuClose();
   }
@@ -285,7 +285,7 @@ export default function MiniDrawer(props) {
             </IconButton>
            
           </div>
-          User {props.name}
+          User :      {props.name}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"

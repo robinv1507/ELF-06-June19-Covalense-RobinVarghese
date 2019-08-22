@@ -8,7 +8,7 @@ class Home extends React.Component {
     
     // we use this to make the card to appear after the page has been rendered
     this.state = {
-      bean:JSON.parse(localStorage.getItem("bean"))
+      bean:JSON.parse(localStorage.getItem("userBean"))
     };
   }
   render() {
@@ -18,7 +18,7 @@ class Home extends React.Component {
        {/*  <HomeHeader name={this.state.bean.name}/> */}
        {/*  <HomeHeader/> */}
              <br></br>
-             <SideBar/>
+             <SideBar name={this.state.bean.name}/>
           {/* <div>
            <HomeData/>
 

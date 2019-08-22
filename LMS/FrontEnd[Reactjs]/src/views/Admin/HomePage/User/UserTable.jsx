@@ -1,27 +1,58 @@
 import React from 'react';
 import MaterialTable from 'material-table';
-
+import Axios from "axios";
 
 export default class   User extends React.Component {
   constructor(props) {
     super(props);
    this.state={
+     
       columns: [
-        { title: 'User Id', field: 'userId', type: 'numeric' },
+        { title: 'User Id', field: 'id', type: 'numeric' },
         { title: 'Name', field: 'name' },
         { title: 'EmailId', field: 'emailId', type:'email' },
         { title: 'Phone Number', field: 'mobileNumber', type: 'numeric' },
+        { title: 'UserType', field: 'UserType' },
         {
           title: 'Password',field:'password' },
       ],
-      data: [
-        { name: 'Mehmet', userId: 1, emailId: "abcd@gmail.com", mobileNumber:89231363, password:'123' },
-        { name: 'Mehmet', userId: 2, emailId: "abcd@gmail.com", mobileNumber:89231363 },
-
-      
+      data: [      
       ],
     }
+    Axios.get('http://localhost:700/getAllUser')
+    .then((res)=>{
+      let userData=res.data.userData;
+
+      this.setState({data: res.data.userData})
+      console.log('getalluser',res);
+    })
+    .catch((err)=>{
+      console.log('err',err)
+    })
+  
     
+  }
+  addUser(newData){
+    //event.preventDefault();
+    Axios.post('http://localhost:700/create',null,
+    {params : {newData}})
+    .then((res)=>{
+      let userData=res.data.userData[0];
+       if(res.data.statusCode==201)
+      {
+       console.log("userdata",userData)
+        alert(userData.description);
+      } else{
+        //<h1>invalid id</h1>
+          alert(userData.description);
+      }
+      console.log('Res',res);
+    })
+    .catch((err)=>{
+      console.log('err',err)
+    })
+  
+
   }
  
 render(){
@@ -37,9 +68,9 @@ render(){
             setTimeout(() => {
               resolve();
               const data = [...this.state.data];
-              debugger
+              
               data.push(newData);
-
+                //this.addUser(newData);
               this.setState({ ...this.state, data });
             }, 600);
           }),
@@ -56,6 +87,7 @@ render(){
           new Promise(resolve => {
             setTimeout(() => {
               resolve();
+              
               const data = [...this.state.data];
               data.splice(data.indexOf(oldData), 1);
               this.setState({ ...this.state, data });

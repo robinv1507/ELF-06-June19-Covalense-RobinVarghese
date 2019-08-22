@@ -281,7 +281,7 @@ export default function MiniDrawer(props) {
             </IconButton>
            
           </div>
-          Admin {props.name}
+           {props.name}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
