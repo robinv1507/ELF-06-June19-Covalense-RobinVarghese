@@ -64,11 +64,11 @@ public class BookController {
 	}// end of updateBook()
 
 	@GetMapping(path = "/deleteBook", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseData deleteBook(int id) {
+	public ResponseData deleteBook(int bookId) {
 
 		ResponseData bookResponse = new ResponseData();
-		if (bookRepository.existsById(id)) {
-			BookBean bean = bookRepository.findById(id).get();
+		if (bookRepository.existsById(bookId)) {
+			BookBean bean = bookRepository.findById(bookId).get();
 			bookRepository.delete(bean);
 			bookResponse.setStatusCode(201);
 			bookResponse.setMsg("Successfull");

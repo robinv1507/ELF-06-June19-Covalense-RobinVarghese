@@ -58,7 +58,7 @@ public class UserController {
 		} else {
 			userResponse.setStatusCode(401);
 			userResponse.setMsg("failed");
-			userResponse.setDescription("User Data is already exist ");
+			userResponse.setDescription("Failed to Add record,try Again ");
 		}
 
 		return userResponse;
@@ -78,13 +78,13 @@ public class UserController {
 		} else {
 			userResponse.setStatusCode(401);
 			userResponse.setMsg("failed");
-			userResponse.setDescription("User Data is not  exist ");
+			userResponse.setDescription("Failed to update record,try Again ");
 		}
 		return userResponse;
 	}// end of updateUserAccount()
 
 	@GetMapping(path = "/deleteUser", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseData deleteUser(int id) {
+	public ResponseData deleteUser(Integer id) {
 
 		ResponseData userResponse = new ResponseData();
 		if (userRepository.existsById(id)) {
@@ -95,7 +95,7 @@ public class UserController {
 		} else {
 			userResponse.setStatusCode(401);
 			userResponse.setMsg("failed");
-			userResponse.setDescription("User Data not present ");
+			userResponse.setDescription("Failed to delete record,try Again  ");
 		}
 		return userResponse;
 	}// end of deleteUser()
@@ -142,13 +142,26 @@ public class UserController {
 	}// end of getUserById()
 
 	@GetMapping(path = "/getAllUser", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseData getUserById() {
+	public ResponseData getAllUser() {
 
 		ResponseData userResponse = new ResponseData();
 		userResponse.setStatusCode(201);
 		userResponse.setMsg("Succesfull");
 		userResponse.setDescription("User found");
 		userResponse.setUserBean(userRepository.findAll());
+
+		return userResponse;
+
+	}// end of getUserById()
+	@GetMapping(path = "/getOnlyUser", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseData getOnlyUser(String userType) {
+
+		ResponseData userResponse = new ResponseData();
+		userResponse.setStatusCode(201);
+		userResponse.setMsg("Succesfull");
+		userResponse.setDescription("Users datas found");
+		
+		userResponse.setUserBean(userRepository.findAllByUserType(userType));
 
 		return userResponse;
 

@@ -17,7 +17,7 @@ public class UserBean  implements Serializable{
 	
 	@Id
 	@Column(name = "id")
-	private int id;
+	private Integer id;
 	@Column(name = "Name")
 	private String name;
 	@Column(name = "EmailId")
