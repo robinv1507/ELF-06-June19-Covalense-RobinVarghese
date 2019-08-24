@@ -195,8 +195,8 @@ export default function MiniDrawer(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-
+      {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+ */}
       <Link to='/login'><MenuItem onClick={handleMenuClose}>LogOut</MenuItem>
       </Link>
     </Menu>
@@ -223,7 +223,7 @@ export default function MiniDrawer(props) {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+       {/*  <p>Profile</p> */}
       </MenuItem>
     </Menu>
   );
@@ -332,9 +332,9 @@ export default function MiniDrawer(props) {
                <ListItem button>
               <ListItemText primary="Book" />
             </ListItem></Link> <Divider />
-            <Link to="/borrowBookDetails"> <ListItem button>
+           {/*  <Link to="/borrowBookDetails"> <ListItem button>
               <ListItemText primary="Borrow Book" />
-            </ListItem> </Link><Divider />
+            </ListItem> </Link><Divider /> */}
       
         </List>
        {/*  <Divider /> */}

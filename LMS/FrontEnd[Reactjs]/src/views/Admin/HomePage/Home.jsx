@@ -2,6 +2,7 @@
 import React from "react";
 
 import SideBar from "views/Admin/SideBar/SideBar.jsx";
+import AdminHomeCard from "views/Admin/AdminHomeCard.jsx";
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -19,10 +20,10 @@ class Home extends React.Component {
        {/*  <HomeHeader/> */}
              <br></br>
              <SideBar name={this.state.bean.name}/>
-          {/* <div>
-           <HomeData/>
+          <div>
+           <AdminHomeCard/>
 
-          </div> */}
+          </div> 
       </div>
     );
   }

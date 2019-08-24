@@ -22,6 +22,8 @@ import RequestedBookDetails from "views/User/HomePage/RequestedBook/RequestedBoo
 import LibrarianHome from "views/Librarian/HomePage/Home.jsx";
 import BookDetailsLb from "views/Librarian/HomePage/Book/BookDetails.jsx";
 import RequestBookList from "views/Librarian/HomePage/RequestedBook/RequestedBookDetails.jsx";
+import SearchBookDetails from "views/User/HomePage/Book/BookSearch/SearchBookDetails.jsx";
+
 var hist = createBrowserHistory();
 
 ReactDOM.render(
@@ -39,7 +41,8 @@ ReactDOM.render(
     <Route exact path="/userHome" component={UserHome} />
     <Route exact path="/borrowedBookDetails" component={BorrowedBookDetails} />
      <Route exact path="/requestedBookDetails" component={RequestedBookDetails} />
-    <Route exact path="/bookList" component={BookList} />
+    <Route exact path="/bookList" component={BookList} />  
+    <Route exact path="/searchBookDetails" component={SearchBookDetails} />
  {/* Librarian */}
     <Route exact path="/lbHome" component={LibrarianHome} />
     <Route exact path="/bookListLibrary" component={BookDetailsLb} />

@@ -8,9 +8,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Axios from "axios";
-import Input from '@material-ui/core/Input';
-import SearchIcon from '@material-ui/icons/Search';
-
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -20,17 +17,6 @@ const StyledTableCell = withStyles(theme => ({
   body: {
     fontSize: 14,
   },
-  searchIcon: {
-   
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-  
 }))(TableCell);
 
 const StyledTableRow = withStyles(theme => ({
@@ -41,6 +27,18 @@ const StyledTableRow = withStyles(theme => ({
   },
 }))(TableRow);
 
+/* function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
+ */
 const useStyles = () => ({
   root: {
     width: '70%',
@@ -50,11 +48,6 @@ const useStyles = () => ({
   table: {
     minWidth: 700,
   },
-  search:{
-    margin:'70px',
-    marginLeft:'230px',
-    marginRight:'80px'
-  }
 });
 
  class BookTable extends React.Component {
@@ -62,7 +55,6 @@ const useStyles = () => ({
     super(props);
 
    this.state={
-     bookName:'',
     rows: [ ],
       
     }
@@ -80,50 +72,11 @@ const useStyles = () => ({
     
   }
   
-  SearchBoook=(event)=>{
-    event.preventDefault();
-    Axios.get('http://localhost:700/getBook',{params:{bookName:this.state.bookName}})
-    .then((res)=>{
-      console.log('getallBook for search',res);
-     // let booksData=res.data.bookData;
-     if(res.data.statusCode==201){
-      this.setState({rows: res.data.bookData})
-     }else{
-       alert(res.data.description)
-     }
-      
-    })
-    .catch((err)=>{
-      console.log('err',err)
-    })
-  
-    
-  }
-  
-  
 render(){
   const classes = useStyles();
-  return (<div>
-  
-    <div className={classes.search} style={{margin:'20px',
-                                           align:'right',marginLeft:"800px",
-                                           marginTop:"20px"}}>
-             <form method="get" onSubmit={this.SearchBoook}> 
-            <Input  variant="contained"
-               //value={searchBookName}
-              placeholder="Search  book......  "
-              onChange={(event)=>{
-                this.setState({bookName:event.target.value})
-              }}
-              value={this.state.bookName}
-            />
-         
-         <Button type="submit" > <SearchIcon /></Button>
-        </form>
-          </div>
-
+  return (
     <Paper className={classes.root} 
-          style={{margin:'50px',marginLeft:'230px',marginRight:'80px'}}>
+          style={{margin:'70px',marginLeft:'230px',marginRight:'80px'}}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
@@ -164,7 +117,6 @@ render(){
         </TableBody>
       </Table>
     </Paper>
-    </div>
   );
           }
 }export default withStyles(useStyles) (BookTable);

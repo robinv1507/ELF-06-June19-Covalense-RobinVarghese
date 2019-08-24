@@ -150,6 +150,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function MiniDrawer(props) {
+  var searchBookName;
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -204,7 +205,9 @@ export default function MiniDrawer(props) {
       </Link>
     </Menu>
   );
-
+   function SearchBoook(){
+    this.props.history.push('/searchBookDetails');
+  }
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -255,9 +258,11 @@ export default function MiniDrawer(props) {
           <Typography variant="h6" noWrap>
           Library Management System
           </Typography>
-          <div className={classes.search}>
+          {/* <form method="get" onSubmit={SearchBoook}> */}
+        {/*   <div className={classes.search}>
             
             <InputBase
+               value={searchBookName}
               placeholder="Search the book.................  "
               classes={{
                 root: classes.inputRoot,
@@ -266,9 +271,10 @@ export default function MiniDrawer(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
          
-         <Button  > <SearchIcon /></Button>
-            
-          </div>
+         <Button type="submit" > <SearchIcon /></Button>
+        
+          </div> */}
+         {/*   </form> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
          
@@ -285,7 +291,7 @@ export default function MiniDrawer(props) {
             </IconButton>
            
           </div>
-          User :      {props.name}
+            {props.userName}
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"

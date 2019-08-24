@@ -1,6 +1,6 @@
 
 import React from "react";
-import BookTable from "views/User/HomePage/Book/BookTable.jsx";
+import BookTable from "views/User/HomePage/Book/BookSearch/SearchBookTable.jsx";
 
 import SideBar from "views/User/SideBar/SideBar.jsx";
 class Home extends React.Component {

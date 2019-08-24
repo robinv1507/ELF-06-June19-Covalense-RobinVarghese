@@ -19,13 +19,13 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    margin:'20px',
-    marginLeft:'230px',
+    margin:'40px',
+    marginLeft:'240px',
 
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 400,
+    width: 900,
     height: 650,
   },
   icon: {
@@ -93,11 +93,11 @@ export default function TitlebarGridList() {
   return (
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={4} style={{ height: 'auto' }}>
+        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <h3>Read the Books</h3>
-        </GridListTile >
+        </GridListTile>
         {tileData.map(tile => (
-          <GridListTile  cols={1} rows={1} key={tile.img}>
+          <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
